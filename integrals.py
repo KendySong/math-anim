@@ -3,7 +3,7 @@ import config
 
 class Integral_1(Scene) :
     def construct(self):
-        self.camera.background_color = GRAY
+        self.camera.background_color = BLACK
 
         integral = MathTex(r'\int_{-\infty}^{-2} \frac{1}{(x+1)^3} \,dx', font_size=config.TEX_SIZE)
         self.play(Create(integral))
@@ -41,10 +41,13 @@ class Integral_1(Scene) :
         )
 
         result = MathTex(r'-\frac{1}{2}', font_size=config.TEX_SIZE).next_to(equal, direction=DOWN*2)
+        followText = Text('Follow for more', font_size=config.TEX_SIZE, color=BLUE).shift(UP * 4)
         self.play(
             Transform(primitive, result), 
-            FadeOut(equal)
+            FadeOut(equal),
+            Create(followText)
         )
+
         self.wait()
 
 class Integral_0(Scene) :

@@ -14,7 +14,7 @@ class Integral_1(Scene) :
         self.play(FadeIn(uSub))
         self.play(FadeIn(duSub))
 
-        subIntegral = MathTex(r'\int_{-\infty}^{-1} \frac{1}{u^3} \,dx', font_size=config.TEX_SIZE)
+        subIntegral = MathTex(r'\int_{-\infty}^{-1} \frac{1}{u^3} \,du', font_size=config.TEX_SIZE)
         self.play(
             FadeIn(subIntegral), 
             FadeOut(integral),

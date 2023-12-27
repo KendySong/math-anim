@@ -31,21 +31,21 @@ class SphereFormula(Scene) :
         self.play(
             Transform(circle_equation_1, circle_equation_2)
         )
-     
-        circle_func = FunctionGraph(
-            lambda t: np.sqrt(1-t*t),
-            color=RED,
-            x_range=[-1, 1]
-        ).scale(2.5)
-        axes = Axes()
         self.remove(circle_equation_1)
-  
-        circle_equation_3 = MathTex(r'f(x)=\sqrt{r^2-x^2}', font_size=config.TEX_SIZE).move_to(circle_equation_0)
+        circle_equation_3 = MathTex(r'f(x)=\sqrt{r^2-x^2}', font_size=config.TEX_SIZE, color=RED).move_to(circle_equation_0)
+
+        axes = Axes(x_range=[-1.5, 1.5], y_range=[0, 1.5])
+        circle_func = axes.plot(lambda x : np.sqrt(1-x*x), x_range=[-1, 1], color=RED)
         self.play(
             FadeOut(circle),
             FadeOut(radius_line),
             FadeOut(radius_text),
             Transform(circle_equation_2, circle_equation_3),
+            Create(axes),
             Create(circle_func),
-            Create(axes)
+            Write(axes.get_axis_labels())
         )
+
+        
+
+        self.wait()

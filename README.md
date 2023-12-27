@@ -5,5 +5,5 @@ Animation script for math videos with utils
 
 ## Run the compilation of a scene
 ```git
-manim -pqh -r 1080,1920 integrals.py Integral_1
+manim -pqh -r 1080,1920 proof.py SphereFormula
 ```

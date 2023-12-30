@@ -46,6 +46,6 @@ class SphereFormula(Scene) :
             Write(axes.get_axis_labels())
         )
 
-        
+        #Add revolution around x axis with 3D scene
 
         self.wait()
